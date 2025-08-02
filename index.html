@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon-192.png" type="image/png">
+  <title>Box Tracker</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#deliveries">تحویل سبدها</a></li>
+      <li><a href="#people">تعریف اشخاص</a></li>
+      <li><a href="#reports">گزارشات</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="deliveries" class="page">
+      <div class="toolbar">
+        <h2>تحویل سبدها</h2>
+      </div>
+      <div id="boxes"></div>
+    </section>
+
+    <section id="people" class="page">
+      <h2>تعریف اشخاص</h2>
+      <input id="person-name" type="text" placeholder="نام شخص جدید" />
+      <button id="add-person">ثبت</button>
+      <ul id="people-list"></ul>
+    </section>
+
+    <section id="reports" class="page">
+      <h2>گزارشات</h2>
+      <select id="report-type">
+        <option value="person">نمایش سبدهای هر شخص</option>
+        <option value="box">نمایش وضعیت هر سبد</option>
+      </select>
+      <button id="generate-report">تولید گزارش</button>
+      <button id="download-pdf">دانلود PDF</button>
+      <div id="report-output"></div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>

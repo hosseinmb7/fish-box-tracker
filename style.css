@@ -1,0 +1,119 @@
+body {
+  font-family: sans-serif;
+  background-color: #f0f8ff;
+  color: #002244;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  display: flex;
+}
+
+nav {
+  background-color: #cc0000;
+  padding: 20px 10px;
+  width: 180px;
+  min-height: 100vh;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 10px 0;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #0066cc;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  background-color: #f0f8ff;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+h1, h2 {
+  color: #cc0000;
+  margin-top: 0;
+}
+
+section {
+  padding: 20px 0;
+  display: none;
+}
+
+.page {
+  display: none;
+}
+
+input, select, button {
+  font-size: 16px;
+  padding: 6px;
+  margin: 6px;
+}
+
+button {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.box-item {
+  background-color: white;
+  border: 2px solid #0066cc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: right;
+}
+
+#people-list {
+  list-style: none;
+  padding: 0;
+}
+
+#people-list li {
+  margin: 5px 0;
+  padding: 4px;
+  background-color: #e6f0ff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#report-output {
+  margin-top: 20px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  direction: rtl;
+  line-height: 1.8;
+}
