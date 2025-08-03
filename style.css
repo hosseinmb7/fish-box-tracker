@@ -44,14 +44,6 @@ main {
   padding: 20px;
 }
 
-.toolbar {
-  position: sticky;
-  top: 0;
-  background-color: #f0f8ff;
-  z-index: 10;
-  padding: 10px 0;
-}
-
 h1, h2 {
   color: #cc0000;
   margin-top: 0;
@@ -62,8 +54,27 @@ section {
   display: none;
 }
 
-.page {
-  display: none;
+.page.active {
+  display: block;
+}
+
+.tab-bar {
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.tab-button.active {
+  background-color: #cc0000;
 }
 
 input, select, button {
@@ -116,4 +127,25 @@ button {
   border-radius: 6px;
   direction: rtl;
   line-height: 1.8;
+  white-space: pre-line;
+}
+
+#assign-success {
+  font-size: 24px;
+  color: green;
+  margin-top: 10px;
+}
+
+#download-report {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#download-report:hover {
+  background-color: #004c99;
 }
