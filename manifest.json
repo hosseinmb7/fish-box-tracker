@@ -1,12 +1,11 @@
 {
-  "name": "Fish Box Tracker",
-  "short_name": "BoxTracker",
+  "name": "ردیابی سبدهای ماهی",
+  "short_name": "سبدماهی",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#f0f8ff",
   "theme_color": "#cc0000",
   "lang": "fa",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
