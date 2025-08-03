@@ -1,39 +1,88 @@
+
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="manifest" href="manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ردیابی سبدهای ماهی</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="icon-192.png" type="image/png">
-  <title>Box Tracker</title>
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="#deliveries">تحویل سبدها</a></li>
-      <li><a href="#people">تعریف اشخاص</a></li>
-      <li><a href="#reports">گزارشات</a></li>
+      <li><a href="#" data-page="assign-page">تحویل سبدها</a></li>
+      <li><a href="#" data-page="people-page">تعریف اشخاص</a></li>
+      <li><a href="#" data-page="report-page">گزارشات</a></li>
+      <li><a href="#" data-page="warehouse-page">انبار</a></li>
+      <li><a href="#" data-page="about-page">درباره ما</a></li>
     </ul>
   </nav>
   <main>
-    <section id="deliveries" class="page">
-      <div class="toolbar">
-        <h2>تحویل سبدها</h2>
+    <!-- تحویل سبدها -->
+    <section id="assign-page" class="page">
+      <h2>تحویل سبدها</h2>
+      <div class="tab-bar">
+        <select id="assign-mode">
+          <option value="number">تحویل بر اساس شماره</option>
+          <option value="person">تحویل بر اساس شخص</option>
+        </select>
       </div>
-      <div id="boxes"></div>
+
+      <!-- بر اساس شماره -->
+      <div id="assign-by-number">
+        <div id="boxes"></div>
+      </div>
+
+      <!-- بر اساس شخص -->
+      <div id="assign-by-person" style="display: none;">
+        <select id="person-select"></select>
+        <input type="number" id="box-input" placeholder="شماره سبد" />
+        <button onclick="assignBoxToPerson()">تحویل سبد</button>
+        <div id="assign-success" style="display:none;">✅</div>
+        <ul id="assigned-boxes-list"></ul>
+      </div>
     </section>
 
-    <section id="people" class="page">
+    <!-- تعریف اشخاص -->
+    <section id="people-page" class="page">
       <h2>تعریف اشخاص</h2>
-      <input id="person-name" type="text" placeholder="نام شخص جدید" />
-      <button id="add-person">ثبت</button>
+      <input type="text" id="person-name" placeholder="نام شخص" />
+      <button onclick="addPerson()">افزودن</button>
       <ul id="people-list"></ul>
     </section>
 
-    <section id="reports" class="page">
+    <!-- گزارشات -->
+    <section id="report-page" class="page">
       <h2>گزارشات</h2>
       <select id="report-type">
+        <option value="by-person">بر اساس شخص</option>
+        <option value="by-box">بر اساس سبد</option>
+      </select>
+      <div id="report-output"></div>
+      <button id="download-report" onclick="downloadReport()">دانلود اطلاعات</button>
+    </section>
+
+    <!-- انبار -->
+    <section id="warehouse-page" class="page">
+      <h2>وضعیت انبار</h2>
+      <div id="warehouse-pages"></div>
+    </section>
+
+    <!-- درباره ما -->
+    <section id="about-page" class="page">
+      <h2>درباره ما</h2>
+      <p><strong>برنامه‌نویس:</strong> حسین قصاب</p>
+      <p><strong>مجموعه:</strong> پخش ماهی قصاب</p>
+      <p><strong>تاریخ ساخت:</strong> ۱۴۰۳/۰۵/۱۲</p>
+      <p><strong>نسخه برنامه:</strong> 1.0.0</p>
+      <p><strong>تلفن تماس:</strong> ۰۹۱۶۶۴۲۵۳۲۱</p>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
         <option value="person">نمایش سبدهای هر شخص</option>
         <option value="box">نمایش وضعیت هر سبد</option>
       </select>
